@@ -50,6 +50,8 @@ module.exports = function createAuthScheme(authFun, authorizerOptions, funName, 
           headers: request.headers,
           pathParameters: utils.nullIfEmpty(pathParams),
           queryStringParameters: utils.nullIfEmpty(request.query),
+          httpMethod: request.method,
+          path: request.url.pathname,
         };
       }
       else {
